@@ -18,63 +18,59 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body id="body">  
+
+
     <!-- navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top "style="background-color: #373A82; margin: 0px;     border-color: transparent; box-shadow: none;">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <!--
-          collapsable buttonnya belum bener.
-          harusnya kalo di klik turun target (bs-example-navbar-collapse-1).
-          lokasinya juga sebaiknya di luar div#navbar-header
-          -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
+<nav class="navbar navbar-default navbar-fixed-top"style="background-color: #373A82; padding-top: 25px; padding-bottom: 25px; opacity: 100%; border-color: transparent; box-shadow: none;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="img/8.png" width="auto" height="50px" style="padding-top: 0px;"></a>
+  </div>    
 
-          <a href="http://kirei.co.id">
-            <img src="img/8.png" width="auto" height="50px" style="padding-top: 0px;">
-          </a>
-        </div>
-
-        <!-- jsnya belum diatur jadi masih belum pas posisinya -->
-        <!-- style <a> kebanyakan di inline, nanti satuin aja di style.css -->
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1  "style="background-color: #373A82;">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="#body">PPI Radar</a></li>
+            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="#home">PPI Radar</a></li>
             <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="https://kirei.co.id/">Kirei</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a style="font-weight:bold; font-size: 130%; background-color: #373A82; color:#FFFFFF; "href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Layanan Informasi <span class="caret"></span></a>
               <ul class="dropdown-menu "style="color:#FFFFFF; background-color: #373A82;">
-                <li class="dropdown">
-                  <li><a style="color:#FFFFFF "href="img/2.png">Pesawat</a></li>
-                  <li><a style="color:#FFFFFF "href="img/3.png">Free Space Langit</a></li>
-                  <li><a style="color:#FFFFFF "href="img/4.png">Gedung Arhanud</a></li>
-                  <li><a style="color:#FFFFFF "href="img/5.png">Gunung</a></li>
-                  <li><a style="color:#FFFFFF "href="img/6.png">Lapangan</a></li>
-                  <li><a style="color:#FFFFFF "href="img/7.png">Cimall</a></li>
-                </li>
+               <ul class="dropdown">
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/2.png">Pesawat</a></li>
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/3.png">Free Space Langit</a></li>
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/4.png">Gedung Arhanud</a></li>
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/5.png">Gunung</a></li>
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/6.png">Lapangan</a></li>
+                <li><a style="color:#FFFFFF; background-color: #373A82;"href="img/7.png">Cimall</a></li>
+               </ul>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav">
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#convert-ADC">Convert ADC</a></li>
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#kontak">Kontak</a></li>
+            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#gaib" >Convert File Binary</a></li>
+            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#gaib-1">Kontak</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="Search" class="btn btn-default">Search</button>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="Search" class="btn btn-default">Search</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--akhir navbar-->
+
 
     <!-- first -->
     <section class="first" id="first">
@@ -151,7 +147,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-sm-4">
             <div class="caption text-center">
               <h3>Cimall</h3>
@@ -164,15 +159,19 @@
           </div>
         </div><!-- /row3 -->
       </div><!-- /container -->
+      <div style="padding-bottom: 50px; "class="gaib" id="gaib">
+      </div>
     </section><!-- /konten -->
 
-    <!-- convert-ADC -->
-    <section class="convert-ADC" id="convert-ADC">
+
+<!-- convert-excel -->
+<hr style="margin-top: 15px; "id="hr-excel">
+    <section style="margin-top: 30px; "class="convert" id="convert">
       <div class="container">
         <!-- row1 -->
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h2>Convert Data ADC</h2>
+            <h2>Convert File Binary</h2>
             <hr>
           </div>  
         </div><!-- /row1 -->
@@ -182,7 +181,7 @@
           <div class="col-sm-8 col-sm-offset-2">
             <form>
               <div class="from-group">
-                <label for="name">Input Data</label>
+                <label for="input">Input Data</label>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Choose file">
                   <span class="input-group-btn">
@@ -192,17 +191,25 @@
                 </div><!-- /input-group -->
               </div>
               <div class="from-group">
-                <label for="email">Output :</label>
-                <input type="text" id="email" class="form-control" placeholder="Menampilkan Hasil Convert Data">
+                <label for="Grafik">Tampilan Grafik:</label>
+                <input type="text" id="Grafik" class="form-control" placeholder="Menampilkan Grafik"style="padding-top: 15px; padding-bottom: 270px;">
+              </div>
+              <div class="from-group">
+                <label for="Jarak">Jarak:</label>
+                <input type="text" id="Jarak" class="form-control" placeholder="Menampilkan Jarak Benda">
               </div>
             </form>
           </div>
         </div><!-- /row2 -->
       </div><!-- /container -->
+      <div style="padding-bottom: 50px; "class="gaib-1" id="gaib-1">
+      </div>
     </section><!-- /pencarian -->
 
+
     <!-- Kontak -->
-    <section class="kontak" id="kontak">
+<hr style="margin-top: 15px; "id="hr-kontak">
+    <section style="margin-top: 30px; "class="kontak" id="kontak">
       <div class="container">
         <!-- row1 -->
         <div class="row">
@@ -225,7 +232,7 @@
               </div>
               <div class="from-group">
                 <label for="email">Pesan</label>
-                <input type="text" id="Pesan" class="form-control" placeholder="masukan pesan">
+                <input type="text" id="Pesan" class="form-control" placeholder="masukan pesan "style="padding-top: 15px; padding-bottom: 200px;">
               </div>
               <div class="checkbox">
                 <label>
@@ -244,7 +251,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center" style="color:#FFFFFF;">
-            <h4>Copyright 2020 | Built by ICEDS Team</h4>
+            <h4>Copyright © 2020 | Built by Kirei</h4>
             <h4>All Right Reserved</h4>
             <h4>Version 1.0</h4>
           </div>
@@ -254,9 +261,14 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="crossorigin="anonymous"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
   </body>
 </html>
