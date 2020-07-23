@@ -16,6 +16,7 @@ nav {
 section hr {
 	width: 1000px;
 	border-top: 4px solid #474991;
+	max-width: 80%
 }
 footer {
 	background-color: #F8F8F8;
