@@ -1,5 +1,7 @@
 # PPI-_Radar
 
+![Hackerman](https://media2.fdncms.com/portmerc/imager/u/original/19371201/4d7.png)
+
 ## Note
 * Alur datanya harusnya .bin->.csv->mysql->.json di localhost:3000/nilai
 * Alur di atas pake node.js
