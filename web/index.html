@@ -179,11 +179,15 @@
             <form>
               <div class="from-group">
                 <label for="input">Input Data</label>
+                <i class="fa fa-upload"></i>
+                <!-- <input id="file" type="file" multiple="true"/> -->
+                <link rel="stylesheet" type="text/css" href="">
                 <div class="input-group btn-group">
-                  <input type="text" class="form-control" placeholder="Choose file">
+                  <input id="berkas" type="text" class="form-control" placeholder="Choose file">
                   <span class="input-group-btn">
                     <label class="btn btn-default">
-                    Browse <input type="file" style="display:none" name="berkas" id="berkas">
+                      Browse <span><input type="file" style="display:none" name="file" id="file" multiple="true" /></span>
+                      <!-- <input type="file" style="display:none" name="berkas" id="berkas"> -->
                     </label>
                     <button type="submit" class="btn btn-primary" role="button" name=
                     "upload">Submit</button>

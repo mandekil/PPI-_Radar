@@ -50,7 +50,7 @@ function createChart(data){
   drawChartPPI(dataPPI);
   document.getElementById("Plot").style.display = "none";
   prepDiagPPI(km);
-  //var myVar = setInterval(function(){prepDiagPPI(km)}, 3000);
+  var myVar = setInterval(function(){prepDiagPPI(km)}, 3000);
 }
 
 function drawChartPPI(data){
