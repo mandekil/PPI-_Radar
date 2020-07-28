@@ -32,14 +32,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="img/8.png" width="auto" height="50px" style="padding-top: 0px;"></a>
+          <a href="#home"><img src="img/8.png"  width="auto" height="50px" style="padding-top: 0px;"></a>
         </div>    
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="#home">PPI Radar</a></li>
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="https://kirei.co.id/">Kirei</a></li>
+            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%; "href="https://kirei.co.id/">PT. Kirei</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
@@ -55,7 +54,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav">
-            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#convertfb" >Convert File Binary</a></li>
+            <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#ppi" >PPI Radar</a></li>
             <li><a style="color:#FFFFFF; font-weight:bold; font-size: 130%;"href="#contact1">Kontak</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -157,7 +156,7 @@
           </div>
         </div><!-- /row3 -->
       </div><!-- /container -->
-      <div style="padding-bottom: 50px; "class="convertfb" id="convertfb">
+      <div style="padding-bottom: 50px; "class="ppi" id="ppi">
       </div>
     </section><!-- /konten -->
 
@@ -169,7 +168,7 @@
         <!-- row1 -->
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h2>Convert File Binary</h2>
+            <h2>PPI Radar</h2>
             <hr>
           </div>  
         </div><!-- /row1 -->
@@ -180,21 +179,28 @@
             <form>
               <div class="from-group">
                 <label for="input">Input Data</label>
-                <div class="input-group">
+                <div class="input-group btn-group">
                   <input type="text" class="form-control" placeholder="Choose file">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Browse</button>
-                    <button type="submit" class="btn btn-primary" role="button">Submit</button>
+                    <label class="btn btn-default">
+                    Browse <input type="file" style="display:none" name="berkas" id="berkas">
+                    </label>
+                    <button type="submit" class="btn btn-primary" role="button" name=
+                    "upload">Submit</button>
                   </span>
                 </div><!-- /input-group -->
               </div>
               <div class="from-group" style="margin-top: 20px">
-                <label for="Jarak">Jarak:</label>
-                <input type="text" id="Jarak" class="form-control" placeholder="Menampilkan Jarak Benda" readonly=>
+                <label for="Jarak">Jarak:</label> 
+                <input type="text" id="Jarak" class="form-control" placeholder="Menampilkan Jarak Benda" style="background-color: #FFFFFF;" readonly=>
+              </div>
+              <div class="from-group" style="margin-top: 20px">
+                <label for="Plot">Radar PPI Plot:</label>
+                <input type="text" id="Plot" class="form-control" placeholder="Menampilkan PPI Radar Plot" style="padding-top: 15px; padding-bottom: 270px; background-color: #FFFFFF;" readonly>
               </div>
               <div class="from-group" style="margin-top: 20px">
                 <label for="Grafik">Tampilan Grafik:</label>
-                <input type="text" id="Grafik" class="form-control" placeholder="Menampilkan Grafik"style="padding-top: 15px; padding-bottom: 270px;" readonly>
+                <input type="text" id="Grafik" class="form-control" placeholder="Menampilkan Grafik"style="padding-top: 15px; padding-bottom: 270px; background-color: #FFFFFF;" readonly>
                 <canvas id="chart-ppi"></canvas>
               </div>
             </form>
