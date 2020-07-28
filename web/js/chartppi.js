@@ -48,7 +48,6 @@ function createChart(data){
   document.getElementById("Jarak").defaultValue = km.toFixed(2) + " km"
   document.getElementById("Grafik").style.display = "none"
   drawChartPPI(dataPPI)
-  drawDiagPPI(XXX)
 }
 
 function drawChartPPI(data){
@@ -64,38 +63,7 @@ function drawChartPPI(data){
         borderColor: 'rgba(55, 58, 130, 0.5)',
         borderWidth: 1,
         pointRadius: 0,
-      }]
-    },
-    options: {
-      scales: {
-        xAxes: [{
-          ticks: {
-            stepSize:500,
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            beginAtZero:true,
-          }
-        }],
-      }
-    }
-  });
-}
-
-function drawDiagPPI(XXX){
-  var ctx = document.getElementById("diag-ppi").getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-      labels: XXX,
-      datasets: [{
-        label: 'PPI',
-        data: XXX,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(55, 58, 130, 0.5)',
-        borderWidth: 1,
-        pointRadius: 0,
+        fill: false,
       }]
     },
     options: {
