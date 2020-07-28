@@ -197,11 +197,12 @@
               <div class="from-group" style="margin-top: 20px">
                 <label for="Plot">Radar PPI Plot:</label>
                 <input type="text" id="Plot" class="form-control" placeholder="Menampilkan PPI Radar Plot" style="padding-top: 15px; padding-bottom: 270px; background-color: #FFFFFF;" readonly>
+                <canvas id="diag-ppi" style="padding-top: 15px"></canvas>
               </div>
               <div class="from-group" style="margin-top: 20px">
                 <label for="Grafik">Tampilan Grafik:</label>
                 <input type="text" id="Grafik" class="form-control" placeholder="Menampilkan Grafik"style="padding-top: 15px; padding-bottom: 270px; background-color: #FFFFFF;" readonly>
-                <canvas id="chart-ppi"></canvas>
+                <canvas id="chart-ppi" style="padding-top: 15px"></canvas>
               </div>
             </form>
           </div>
@@ -276,7 +277,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- ChartJS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
 
     <script src="js/script.js"></script>
     <script src="js/chartppi.js"></script>
