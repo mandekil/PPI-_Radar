@@ -137,7 +137,7 @@ function drawDiagPPI(data){
         },
       },
       legend: {
-        //display: false,
+        display: false,
       },
     },
   });
