@@ -1,32 +1,32 @@
 <?php
+//require "convert2.php";
 if(isset($_POST["upload"])){
     $file = $_FILES["berkas"];
     $filename = $_FILES["berkas"]["name"];
     $filedir = $_FILES["berkas"]["tmp_name"];
     $imageFileType = strtolower(pathinfo($filedir,PATHINFO_EXTENSION));
-
-    $handle = file_get_contents($filedir);
-    $contents = fread($handle, filesize($file));
-    $data = unpack('v*',$contents);
-
-    $filecsv = fopen("$file.csv","w");
-    fputcsv($filecsv, $data, "\n");
-    fclose($handle);
-    $file = fopen("$file.csv","r");
-    $productData = array();
-    $i = 1;
-    while (($array = fgetcsv($file, 0, ",")) !== FALSE) { 
-        $productData[] = (array('id'=>$i++, 'data'=> $array));    
-    }
-    
-    $json = json_encode($productData);
-    if (file_put_contents("ppicoba.json", $json))
-        echo "Ok";
-    else
-        echo "Error";
-
-    fclose($filecsv);*/
+    //move_uploaded_file($filedir,"./uploads/");
 }
+$filechoosen = $filedir;
+$handle = fopen($filechoosen, "rb");
+$contents = fread($handle, filesize($filechoosen));
+$data = unpack('v*',$contents);
+
+$filecsv = fopen("$filename.csv","w");
+fputcsv($filecsv, $data, "\n");
+fclose($handle);
+$fileopen = fopen("$filename.csv","r");
+$productData = array();
+$i = 1;
+while (($array = fgetcsv($fileopen, 0, ",")) !== FALSE) { 
+    $productData[] = (array('id'=>$i++, 'data'=> $array));    
+}
+ 
+$json = json_encode($productData);
+file_put_contents("$filename.json", $json);
+
+fclose($filecsv);
+header("location:index3.php");   
 
 
 
@@ -39,6 +39,4 @@ if(isset($_POST["upload"])){
 }*/
 
 //echo $statusMsg;
-
-
 ?>
