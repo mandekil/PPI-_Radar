@@ -2,6 +2,8 @@ $(document).ready(function() {
   getNilai()
 });
 
+var quad = 1;
+
 function getNilai(){
   //var url = 'http://localhost:3000/nilai'
   //sementara kalo belum bisa akses node.js
@@ -49,8 +51,8 @@ function createChart(data){
   document.getElementById("Grafik").style.display = "none";
   drawChartPPI(dataPPI);
   document.getElementById("Plot").style.display = "none";
-  prepDiagPPI(km);
-  //var myVar = setInterval(function(){prepDiagPPI(km)}, 3000);
+  prepRadPPI(km);
+  //var myVar = setInterval(function(){prepRadPPI(km)}, 3000);
 }
 
 function drawChartPPI(data){
@@ -69,6 +71,9 @@ function drawChartPPI(data){
       }]
     },
     options: {
+      chartArea: {
+        //backgroundColor: 'rgba(251, 85, 85, 0.4)'
+      },
       scales: {
         xAxes: [{
           ticks: {
@@ -88,11 +93,11 @@ function drawChartPPI(data){
   });
 }
 
-function prepDiagPPI(data){
+function prepRadPPI(data){
   let dataGPPI = [[],[]];
   let acc = 60;
   let step = 10;
-  let randIdx = Math.floor(Math.random() * Math.floor(acc/step+1))*step;
+  let randIdx = (Math.floor(Math.random() * Math.floor(acc/step+1))*step) + (quad-1)*90;
   let time = new Date()
   for (var i = 0; i < 360/step; i++) {
     dataGPPI[0].push(i*step);
@@ -103,11 +108,26 @@ function prepDiagPPI(data){
       dataGPPI[1].push(0)
     }
   }
-  drawDiagPPI(dataGPPI)
+  drawRadPPI(dataGPPI)
 }
 
-function drawDiagPPI(data){
-  var ctx = document.getElementById("diag-ppi").getContext('2d');
+Chart.pluginService.register({
+    beforeDraw: function (chart, easing) {
+        if (chart.config.options.chartArea && chart.config.options.chartArea.backgroundColor) {
+            var helpers = Chart.helpers;
+            var ctx = chart.chart.ctx;
+            var chartArea = chart.chartArea;
+
+            ctx.save();
+            ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
+            ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
+            ctx.restore();
+        }
+    }
+});
+
+function drawRadPPI(data){
+  var ctx = document.getElementById("rad-ppi").getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'radar',
     data: {
@@ -115,14 +135,27 @@ function drawDiagPPI(data){
       datasets: [{
         label: 'PPI',
         data: data[1],
+        //backgroundColor: 'red',
         backgroundColor: 'rgba(55, 58, 130, 1)',
         borderColor: 'rgba(0, 0, 0, 0)',
         pointBorderColor: 'rgba(55, 58, 130, 1)',
         borderWidth: 1,
         pointRadius: 4,
+      /*},{
+        label: 'PPI2',
+        data: [25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,25],
+        //backgroundColor: 'red',
+        backgroundColor: 'rgba(0, 255, 0, 1)',
+        borderColor: 'rgba(0, 255, 0, 0)',
+        pointBorderColor: 'rgba(0, 255, 0, 1)',
+        borderWidth: 1,
+        pointRadius: 0,*/
       }]
     },
     options: {
+      chartArea: {
+        //backgroundColor: 'rgba(251, 85, 85, 0.4)'
+      },
       animation: {
         duration: 0
       },
@@ -131,6 +164,7 @@ function drawDiagPPI(data){
           //display: false
         },
         ticks: {
+          backdropColor: 'rgba(0, 0, 0, 0)',
           suggestedMin: 0,
           suggestedMax: 25,
           lineHeight: 5,
