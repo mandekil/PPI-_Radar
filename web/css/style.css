@@ -117,17 +117,17 @@ footer {
 	height: 250px;
 	background: linear-gradient(45deg, #373A82 0%, transparent 50%); 
 	transform-origin:top left;
-	animation: animate 5s linear infinite;
+	animation: animate 12s linear infinite;
 }
 @keyframes animate
 {
 	0%
 	{
-		transform: rotate(0deg);
+		transform: rotate(-180deg);
 	}
 	100%
 	{
-		transform: rotate(360deg);
+		transform: rotate(180deg);
 	}
 }
 @keyframes glow
