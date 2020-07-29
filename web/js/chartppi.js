@@ -52,7 +52,7 @@ function createChart(data){
   drawChartPPI(dataPPI);
   document.getElementById("Plot").style.display = "none";
   prepRadPPI(km);
-  //var myVar = setInterval(function(){prepRadPPI(km)}, 3000);
+  var myVar = setInterval(function(){prepRadPPI(km)}, 3000);
 }
 
 function drawChartPPI(data){
