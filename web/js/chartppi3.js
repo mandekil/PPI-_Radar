@@ -119,41 +119,27 @@ function drawChartPPI(data){
 	});
 }
 
-var dataGPPI = [[],[]];
-var fst = 0;
-var remIdx = [];
 function prepRadPPI(data){
+	let dataGPPI = [[],[]];
 	let acc = 60;
 	let step = 10;
 	let randIdx = (Math.floor(Math.random() * Math.floor(acc/step+1))*step) + (quad)*90;
 	let time = new Date()
-
-	// if (quad==0) {
-	if (fst==0) {
-		dataGPPI = [[],[]];
-		for (var i = 0; i < 360/step; i++) {
-			dataGPPI[0].push(i*step);
-			if (dataGPPI[0][i]==randIdx) {
-				dataGPPI[1].push(data)
-				console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds(), i, dataGPPI[0][i], dataGPPI[1][i])
-			} else {
-				dataGPPI[1].push(0)
-			}
+	for (var i = 0; i < 360/step; i++) {
+		dataGPPI[0].push(i*step);
+		if (dataGPPI[0][i]==randIdx) {
+			dataGPPI[1].push(data)
+			console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds(), i, dataGPPI[0][i], dataGPPI[1][i])
+		} else {
+			dataGPPI[1].push(0)
 		}
-	} else {
-		
-		if (fst >3) {
-			dataGPPI[1][remIdx[quad]] = 0;
-		}
-		dataGPPI[1][(randIdx/10)-1] = data;
 	}
+
 	console.log('kuadran', quad+1)
 	console.log('here')
 	console.log(dataGPPI[0][dataGPPI[0].length-1])
 	console.log(dataGPPI[1][dataGPPI[1].length-1])
 	drawRadPPI(dataGPPI)
-	fst ++;
-	remIdx[quad] = (randIdx/10)-1;
 }
 
 Chart.pluginService.register({
