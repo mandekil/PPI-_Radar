@@ -3,7 +3,7 @@
 if(isset($_POST["upload"])){
     //baca multiple files
     $countfile = 0;
-    foreach($_FILES["file"]["name"] as $filename){
+    foreach($_FILES["file"]["name"] as $kkk => $filename){
         $filedir = $_FILES["file"]["tmp_name"][$countfile];
         $imageFileType = strtolower(pathinfo($filedir,PATHINFO_EXTENSION));
         
@@ -13,12 +13,11 @@ if(isset($_POST["upload"])){
         $contents = fread($handle, filesize($filechoosen));
         $data = unpack('v*',$contents);
 
-        $array = array ( $data);
-        $dataparse = is_array($array)? array_values($array): array();
         
-
+        //$dataparse = is_array($array)? array_values($array): array();
+        
         //mulai convert hasil fft ke json
-        $arr = $dataparse;
+        $arr = $data;
         //echo $arr[0].$arr[1].$arr[2].$arr[3];
 
         $ar = array();
@@ -29,9 +28,11 @@ if(isset($_POST["upload"])){
 
         $json = json_encode($ar);
         
-        for($i = 1; $i <= count($_FILES["file"]["name"]); $i++){
-            file_put_contents("file_$i.json", $json);    
-        }
+        $i = $kkk+1;
+        $nama = "file_$i.json";
+        file_put_contents($nama, $json);
+        
+        $bool = false;
         
         fclose($handle);
 
@@ -40,7 +41,6 @@ if(isset($_POST["upload"])){
 header("location:index.php");
 
 ?>
-
 
 <script type="text/javascript" src="/js/fft.js"></script>
 <script>
@@ -52,8 +52,10 @@ function arrPHP2JS (){
 	var imaginary = new Array(real.length); 
 	imaginary.fill(0);   
 	console.log(real)
-	console.log(imaginary)
-
+    console.log(imaginary)
+    
+    /*var test = <?php echo $bool; ?>;
+    console.log(test)*/
 	//FFT
 	var fft = new FFT(); 
 	fft.calc(1, real, imaginary);
