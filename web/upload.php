@@ -3,8 +3,8 @@
 if(isset($_POST["upload"])){
     //baca multiple files
     $countfile = 0;
-    foreach($_FILES["berkas"]["name"] as $filename){
-        $filedir = $_FILES["berkas"]["tmp_name"][$countfile];
+    foreach($_FILES["file"]["name"] as $filename){
+        $filedir = $_FILES["file"]["tmp_name"][$countfile];
         $imageFileType = strtolower(pathinfo($filedir,PATHINFO_EXTENSION));
         
         //buka file binary
