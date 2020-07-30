@@ -1,29 +1,43 @@
-<?php
-$filename = "C:\\xampp\\htdocs\\raw.bin";
-$handle = fopen($filename, "rb");
-$contents = fread($handle, filesize($filename));
-$data = unpack('v*',$contents);
+<?php 
+$arr = array(1, 2, 4, 4);
+echo $arr[0].$arr[1].$arr[2].$arr[3];
 
-$json = json_encode($data);
-//file_put_contents("$filename.json", $json);
-echo ($json);
-fclose($handle);
+$ar = array();
+foreach ($arr as $key => $value) {
+	$new = array("id"=>$key, "nilai_ppi"=>$value);
+	array_push($ar, $new);
+}
+
+$json = json_encode($ar);
+
+echo "<pre>";
+echo $json;
+echo "</pre>";
+
 ?>
 
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<!--<script src="https://raw.githubusercontent.com/dntj/jsfft/master/lib/fft.js"></script>-->
-<script type="module" src="js/fft.js"></script>
-<script type = "text/javascript">
-    //var url = 'js/fft.js';
-    var datas = [1, 2, 3, 4, 5];
-    console.log(datas);
-    //var newdatas = new Array(datas);
-    /*$.getScript(url, function(){
-        $(document).ready(function  (){
-            
-            console.log(FFT(datas));
-        });
-    });*/
-    console.log(FFT(datas));
-    
+<script type="text/javascript" src="/js/fft.js"></script>
+<script>
+arrPHP2JS();
+function arrPHP2JS (){
+	var outArr = [];
+	var fft = new FFT();
+	var real = <?php echo json_encode($arr); ?>;
+	var imaginary = new Array(real.length); 
+	imaginary.fill(0);   
+	console.log(real)
+	console.log(imaginary)
+
+	//FFT
+	var fft = new FFT(); 
+	fft.calc(1, real, imaginary);
+	console.log(real);
+	console.log(imaginary);
+
+	for (var i=0; i<real.length; i++){
+		outArr.push(Math.sqrt(Math.pow(real[i],2) + Math.pow(imaginary[i],2)));
+	}
+	console.log(outArr);
+	return outArr;
+}
 </script>
