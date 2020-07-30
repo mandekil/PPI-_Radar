@@ -17,7 +17,9 @@ if(isset($_POST["upload"])){
         //mulai convert hasil fft ke json
         $json = json_encode($data);
 
-        file_put_contents("$filename.json", $json);
+        for($i = 1; $i < count($_FILES["file"]["name"]); $i++){
+            file_put_contents("file_$i.json", $json);    
+        }
         fclose($handle);
         fclose($filecsv);
     }
