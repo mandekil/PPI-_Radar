@@ -7,7 +7,7 @@ $(document).ready(function() {
 var quad = 0;
 function  prepQuad() {
 	getNilai(quad);
-	var myvar = setInterval( function(){quad++;quad=quad%4;getNilai(quad);if(quad==-3){clearInterval(myvar);console.log('stop')}},3000);
+	var myvar = setInterval( function(){quad++;quad=quad%4;getNilai(quad);if(quad==3){clearInterval(myvar);console.log('stop')}},3000);
 }
 
 
